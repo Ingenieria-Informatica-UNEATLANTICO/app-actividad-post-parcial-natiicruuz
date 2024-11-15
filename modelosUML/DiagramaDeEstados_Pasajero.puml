@@ -1,0 +1,9 @@
+@startuml
+[*] --> Esperando
+Esperando --> Esperando
+Esperando --> EnBusDeCaminoADestino 
+
+EnBusDeCaminoADestino --> LlegoAlDestino
+
+LlegoAlDestino --> [*]
+@enduml

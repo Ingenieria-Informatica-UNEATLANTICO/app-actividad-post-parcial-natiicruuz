@@ -1,0 +1,49 @@
+@startuml
+object "Santander: Ciudad" as ciudadSantander
+object "TUS: Agencia" as agenciaPrincipal
+object "Pepe Martínez: Conductor" as conductor
+object "Natalia Cruz: Pasajero" as pasajero
+object "Gonzales T - PCTCAN UNEAT: Ruta" as ruta1
+
+object "Bus1: Servicio" as Servicio
+object "BYD Hibrido: Vehículo" as bus101
+
+object "Valdecilla: Parada" as valdecilla
+
+object "7:49 am : Horario" as horarioLunesViernes
+
+object "Tarifa Joven: Tarifa" as tarifa
+object "Trimestral: Abono" as abono
+
+object "Efectivo: Sistema de Pago" as SistemadePago
+object "Retraso por tráfico: Incidencia" as incidencia
+
+ciudadSantander --> agenciaPrincipal
+ciudadSantander -- bus101
+ciudadSantander -- pasajero
+ciudadSantander -- conductor
+
+agenciaPrincipal *-l- Servicio
+agenciaPrincipal o-- tarifa
+agenciaPrincipal o-- bus101
+
+tarifa o-- abono
+abono *-- SistemadePago
+
+Servicio --> ruta1
+Servicio o-- incidencia
+
+ruta1 .. bus101
+ruta1 -- valdecilla
+ruta1 o-- horarioLunesViernes
+
+valdecilla -- horarioLunesViernes
+
+conductor o-- ruta1
+conductor --o bus101
+
+pasajero .. ruta1
+pasajero .. Servicio
+@enduml
+
+

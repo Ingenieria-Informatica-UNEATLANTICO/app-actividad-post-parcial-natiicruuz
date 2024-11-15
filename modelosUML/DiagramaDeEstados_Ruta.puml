@@ -1,0 +1,21 @@
+@startuml
+[*] --> SinEmpezar
+
+SinEmpezar --> IncorporandoALinea 
+
+IncorporandoALinea --> InicioRuta
+
+InicioRuta --> EnRutaATiempo 
+InicioRuta --> EnRutaConRetrasos 
+
+EnRutaConRetrasos --> EnRutaATiempo 
+EnRutaATiempo --> EnRutaConRetrasos 
+
+EnRutaATiempo --> FinalDeRuta
+EnRutaConRetrasos --> FinalDeRuta 
+FinalDeRuta --> [*]
+
+FinalDeRuta --> EnEspera
+
+EnEspera --> IncorporandoALinea 
+@enduml

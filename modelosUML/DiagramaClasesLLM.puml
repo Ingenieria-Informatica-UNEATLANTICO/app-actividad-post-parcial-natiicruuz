@@ -1,0 +1,50 @@
+@startuml
+class Ciudad
+class Agencia 
+class Persona
+class Conductor
+class Pasajero
+class Rutas 
+class Servicios
+class Vehiculos
+class Paradas
+class Horarios
+class Tarifas
+class Abono
+class SistemaPago
+class Incidencias 
+
+Ciudad o-- Agencia
+Ciudad o-- Vehiculos
+Ciudad o-- Pasajero
+Ciudad o-- Conductor
+
+Agencia *-r- Servicios
+Agencia o-l- Tarifas
+Agencia o-u- Vehiculos
+
+Tarifas *-d- Abono
+Abono o-d- SistemaPago
+
+Servicios *-d- Rutas
+Servicios o-d- Incidencias
+Servicios o-- Tarifas
+
+Rutas *-- Vehiculos
+Rutas -- Paradas
+Rutas o-- Horarios
+
+Paradas -- Horarios
+
+Persona <|-d- Conductor
+Persona <|-d- Pasajero
+
+Conductor *-- Vehiculos
+Conductor o-- Rutas
+
+Pasajero o-- Servicios
+Pasajero o--- SistemaPago
+
+Incidencias o-- Vehiculos
+Incidencias o-- Rutas
+@enduml
