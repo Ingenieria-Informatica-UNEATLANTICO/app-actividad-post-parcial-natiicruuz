@@ -1,0 +1,15 @@
+@startuml
+[*] --> Esperando : Llega al paradero
+
+Esperando: Espera en la parada
+Esperando --> SubiendoAlBus : Llega el autobús
+
+SubiendoAlBus: Sube al autobús
+SubiendoAlBus --> EnBusDeCaminoADestino : Encuentra asiento o espacio disponible
+
+EnBusDeCaminoADestino: Viaje en progreso
+EnBusDeCaminoADestino --> LlegoAlDestino : Se alcanza la parada de destino
+
+LlegoAlDestino: Descendió en el destino
+LlegoAlDestino --> [*] : Termina el trayecto
+@enduml

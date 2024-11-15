@@ -1,0 +1,29 @@
+@startuml
+[*] --> SinEmpezar
+
+SinEmpezar: Ruta aún no está activa
+SinEmpezar --> IncorporandoALinea : Preparación completada
+
+IncorporandoALinea: Vehículo asignado a línea
+IncorporandoALinea --> InicioRuta : Señal de inicio recibida
+
+InicioRuta: Inicio del recorrido
+InicioRuta --> EnRutaATiempo : Salida según horario
+InicioRuta --> EnRutaConRetrasos : Salida tardía
+
+EnRutaATiempo: En ruta y cumpliendo horarios
+EnRutaConRetrasos: En ruta pero con retrasos
+
+EnRutaATiempo --> EnRutaConRetrasos : Retrasos detectados
+EnRutaConRetrasos --> EnRutaATiempo : Horario recuperado
+
+EnRutaATiempo --> FinalDeRuta : Recorrido completo
+EnRutaConRetrasos --> FinalDeRuta : Recorrido completo
+
+FinalDeRuta: Ruta completada
+FinalDeRuta --> EnEspera : En pausa entre rutas
+FinalDeRuta --> [*] : Ruta cerrada
+
+EnEspera: Esperando nueva asignación
+EnEspera --> IncorporandoALinea : Preparación completada
+@enduml
