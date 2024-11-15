@@ -1,6 +1,6 @@
 # Examen Parcial IDSW1 Natalia
 
-Se presenta una solución de un modelo del dominio de un sistema de transporte público de una ciudad.
+Se presenta una solución de un modelo del dominio de un sistema de transporte público de una ciudad junto con una nueva iteracion generada por un modelo de lenguaje LLM aportando recomendaciones sobre la iteracion del examen parcial. 
 
 
 ### Artefactos
